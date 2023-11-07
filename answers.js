@@ -73,5 +73,19 @@ console.log(dart);
 wolfy[0] = "Gameboy";
 console.log(wolfy);
 
+// ******************************
+// Yell at the Ninja Turtles
+// ******************************
+
+// Create an array with the members of the ninja turtles (Donatello, Leonardo, Raphael, Michaelangelo)
+const ninjas = ["Donatello", "Leonardo", "Raphael", "Michaelangelo"];
+
+for (const ninja of ninjas) {
+    console.log(ninja.toUpperCase());
+}
+
+// Use a for of loop (not a typo - try it out! Try a for of loop) to call toUpperCase() on each of them and print out the result.
+
+// As a developer, you'll be a lifelong learner and constantly encountering new things. We'll give you little stretches like this to get you used to looking at documentation and figuring some things out on your own. You've got this!
 
 
