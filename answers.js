@@ -150,3 +150,37 @@ console.log(fastFuriousIndex);
 // Yes, we should have used let to declare the favMovies variable. The const keyword is used to declare constants, which are values that cannot be changed but arrays are objects which their values can be changed.
 // When we declare a variable with const and assign it an array, we are creating a constant reference to the array but cannot reassign the variable to a new array, but we can still change the values inside the array.
 
+// ******************************
+// Where is Waldo
+// ******************************
+
+const whereIsWaldo = [["Timmy", "Frank"], "Eggbert",
+                    ["Lucinda", "Jacc", "Neff", "Snoop"],
+                    ["Petunia", ["Baked Goods", "Waldo"]]];
+                    
+// Remove Eggbert (hint look at the slice/splice method(s))
+// Get the index of Eggbert in the array
+const eggIndex = whereIsWaldo.indexOf("Eggbert");
+
+// Slice the array, removing Eggbert
+const newWhereIsWaldo = whereIsWaldo.slice(eggIndex - 1, eggIndex + 1);
+
+console.log(newWhereIsWaldo);
+// Change "Neff" to "No One"
+// Get the index of "Neff" in the array
+const neffIndex = whereIsWaldo[2].indexOf("Neff");
+
+// Replace "Neff" with "No One"
+whereIsWaldo[2][neffIndex] = "No One";
+
+console.log(whereIsWaldo);
+// Access and console.log "Waldo"
+// Get the index of the inner array containing Waldo
+const waldoIndex = whereIsWaldo.findIndex((subArray) => subArray.includes("Waldo"));
+
+// Get the index of Waldo in the inner array
+const waldoIndexOfInnerArray = whereIsWaldo[waldoIndex].indexOf("Waldo");
+
+// Access and console.log Waldo
+console.log(whereIsWaldo[waldoIndex][waldoIndexOfInnerArray]);
+
