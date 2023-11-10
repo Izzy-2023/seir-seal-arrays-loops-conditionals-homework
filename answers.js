@@ -114,11 +114,39 @@ console.log(favMovies);
 favMovies.reverse();
 console.log(favMovies);
 // Use the shift method
+favMovies.shift();
 // unshift - what does it return?
+favMovies.unshift();
 // splice "Django Unchained" and add "Avatar" (try finding the index of "Django Unchained", instead of counting it yourself) Thought question: did this permanently alter our array?
+const djangoIndex = favMovies.indexOf('Django Unchained');
+
+// Splice "Django Unchained" from the array
+favMovies.splice(djangoIndex, 1);
+
+// Add "Avatar" to the array
+favMovies.splice(djangoIndex, 0, 'Avatar');
+
+console.log(favMovies);
 // slice the last half of the array (challenge yourself and try to programatically determine the middle of the array rather than counting it and hard coding it) - Thought question: did this permanently alter our array?
+const indexOfHalf = Math.ceil(favMovies.length / 2);
+const lastHalf = favMovies.slice(indexOfHalf);
+
+console.log(lastHalf);
 // store the value of your slice in a variable, console.log it - Thought question: what is going on here?
+
+// Store the value of the slice in a variable
+const lastHalfVariable = lastHalf;
+
 // console.log your final results
+console.log(lastHalfVariable);
 
+// After running the above tasks, console.log the index of "Fast and Furious" -We removed it from the array, what value do we get when we look for the index of something that is not in the array?
+const fastFuriousIndex = favMovies.indexOf('Fast and Furious');
 
+console.log(fastFuriousIndex);
+
+// Thought question: that we declared the variable favMovies with const, and yet, we were allowed to change the array. Weird? Should we have used let?
+
+// Yes, we should have used let to declare the favMovies variable. The const keyword is used to declare constants, which are values that cannot be changed but arrays are objects which their values can be changed.
+// When we declare a variable with const and assign it an array, we are creating a constant reference to the array but cannot reassign the variable to a new array, but we can still change the values inside the array.
 
