@@ -157,30 +157,70 @@ console.log(fastFuriousIndex);
 const whereIsWaldo = [["Timmy", "Frank"], "Eggbert",
                     ["Lucinda", "Jacc", "Neff", "Snoop"],
                     ["Petunia", ["Baked Goods", "Waldo"]]];
-                    
+
+
 // Remove Eggbert (hint look at the slice/splice method(s))
+
 // Get the index of Eggbert in the array
-const eggIndex = whereIsWaldo.indexOf("Eggbert");
+const eggbertIndex = whereIsWaldo.indexOf("Eggbert");
 
 // Slice the array, removing Eggbert
-const newWhereIsWaldo = whereIsWaldo.slice(eggIndex - 1, eggIndex + 1);
+const newWhereIsWaldo = whereIsWaldo.slice(eggbertIndex - 1, eggbertIndex + 1);
 
 console.log(newWhereIsWaldo);
-// Change "Neff" to "No One"
-// Get the index of "Neff" in the array
-const neffIndex = whereIsWaldo[2].indexOf("Neff");
 
-// Replace "Neff" with "No One"
-whereIsWaldo[2][neffIndex] = "No One";
+// Change "Neff" to "No One"
+
+// Get the index of the inner array containing Neff
+const neffInnerArrayIndex = whereIsWaldo.findIndex((subArray) => subArray.includes("Neff"));
+
+// Get the index of Neff in the inner array
+const neffIndex = whereIsWaldo[neffInnerArrayIndex].indexOf("Neff");
+
+// Replace Neff with "No One"
+whereIsWaldo[neffInnerArrayIndex].slice(neffIndex, 1, "No One");
 
 console.log(whereIsWaldo);
+
 // Access and console.log "Waldo"
+
 // Get the index of the inner array containing Waldo
-const waldoIndex = whereIsWaldo.findIndex((subArray) => subArray.includes("Waldo"));
+// const waldoInnerArrayIndex = whereIsWaldo.findIndex((subArray) => subArray.includes("Waldo"));
 
 // Get the index of Waldo in the inner array
-const waldoIndexOfInnerArray = whereIsWaldo[waldoIndex].indexOf("Waldo");
+// const waldoIndex = whereIsWaldo[waldoInnerArrayIndex].indexOf("Waldo");
 
-// Access and console.log Waldo
-console.log(whereIsWaldo[waldoIndex][waldoIndexOfInnerArray]);
+// Console.log Waldo
+// console.log(whereIsWaldo[waldoInnerArrayIndex][waldoIndex]);
 
+
+// ****************************
+// Excited Kitten
+// ****************************
+
+// Write code that logs "Love me, pet me! HSSSSSS!" 20 times.
+
+// For every even number in your loop, log "...human...why you 
+// taking pictures of me?...", "...the catnip made me do it...", or 
+// "...why does the red dot always get away..." at random.
+
+function lovePets() {
+    for (let i = 0; i < 20; i++) {
+        console.log("Love me, pet me! HSSSSSS!");
+
+    if (i % 2 === 0 ) {
+        const catNip = [
+            "...human...why you taking pictures of me?...", 
+            "...the catnip made me do it...", 
+            "...why does the red dot always get away..."
+        ];
+        const randomIndex = Math.floor (
+            Math.random() * catNip.length
+            );
+            console.log(catNip[randomIndex]);
+        
+    }
+    }
+}
+
+lovePets();
